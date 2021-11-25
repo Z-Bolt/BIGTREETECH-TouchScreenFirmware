@@ -108,6 +108,7 @@
 #include "BedLevelingLayer2.h"
 #include "BLTouch.h"
 #include "CaseLight.h"
+#include "Change.h" //Z-Bolt
 #include "common.h"
 #include "ConnectionSettings.h"
 #include "Extrude.h"

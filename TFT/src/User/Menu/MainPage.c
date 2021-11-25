@@ -53,11 +53,12 @@ void menuMain(void)
         break;
 
       case KEY_ICON_2:
-        #ifdef LOAD_UNLOAD_M701_M702
+       /* #ifdef LOAD_UNLOAD_M701_M702 //Z-Bolt
           OPEN_MENU(menuLoadUnload);
-        #else
+        #else 
+        */
           OPEN_MENU(menuExtrude);
-        #endif
+       // #endif //Z-Bolt
         break;
 
       case KEY_ICON_3:

@@ -361,5 +361,13 @@
     #define STRING_CONNECT_PROBE          "Podłącz sondę przed rozpoczęciem procesu. Pamiętaj, aby później ją odłączyć."
     #define STRING_DISCONNECT_PROBE       "Upewnij się, że sonda została odłączona przed użyciem tej funkcji."
     #define STRING_CALIBRATION            "Kalibrowanie"
+    
+    //Z-Bolt
+    #define STRING_CHANGE                 "Change"
+    #define STRING_CONFIRM_LOAD           "Confirm load"
+    #define STRING_CONFIRM_UNLOAD         "Confirm unload"
+    #define STRING_WAIT_HEAT              "Heating, wait..."
+    #define STRING_BED_UP                 "Bed up"
+    #define STRING_BED_DOWN               "Bed Down"
 
 #endif

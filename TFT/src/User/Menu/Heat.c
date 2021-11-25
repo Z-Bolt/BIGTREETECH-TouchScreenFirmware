@@ -3,6 +3,7 @@
 
 static uint8_t tool_index = NOZZLE0;
 static uint8_t degreeSteps_index = 1;
+bool chamb; //Z-Bolt
 
 void heatSetCurrentIndex(uint8_t index)
 {
@@ -50,10 +51,14 @@ void menuHeat(void)
 
     switch (key_num)
     {
-      case KEY_ICON_0:
+      case KEY_ICON_0: 
+      {
+      if (tool_index != CHAMBER) { //Z-Bolt
       case KEY_DECREASE:
-        heatSetTargetTemp(tool_index, actTarget - degreeSteps[degreeSteps_index]);
+         heatSetTargetTemp(tool_index, actTarget - degreeSteps[degreeSteps_index]);
+         }
         break;
+      }
 
       case KEY_INFOBOX:
       {
@@ -67,9 +72,13 @@ void menuHeat(void)
       }
 
       case KEY_ICON_3:
+      {
+      if (tool_index != CHAMBER) { //Z-Bolt
       case KEY_INCREASE:
         heatSetTargetTemp(tool_index, actTarget + degreeSteps[degreeSteps_index]);
+        }
         break;
+      }
 
       case KEY_ICON_4:
         do

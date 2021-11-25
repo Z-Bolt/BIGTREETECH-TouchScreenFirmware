@@ -11,8 +11,8 @@ const MENUITEMS homeItems = {
     {ICON_Y_HOME,                  LABEL_Y},
     {ICON_Z_HOME,                  LABEL_Z},
     {ICON_BACKGROUND,              LABEL_BACKGROUND},
-    {ICON_BACKGROUND,              LABEL_BACKGROUND},
-    {ICON_BACKGROUND,              LABEL_BACKGROUND},
+    {ICON_Z_DEC,                   LABEL_BED_UP},
+    {ICON_Z_INC,                   LABEL_BED_DOWN},
     {ICON_BACK,                    LABEL_BACK},
   }
 };
@@ -32,6 +32,8 @@ void menuHome(void)
       case KEY_ICON_1: storeCmd("G28 X\n"); break;
       case KEY_ICON_2: storeCmd("G28 Y\n"); break;
       case KEY_ICON_3: storeCmd("G28 Z\n"); break;
+      case KEY_ICON_5: storeCmd("G28 Z\n"); break;                  
+      case KEY_ICON_6: storeCmd("G1 Z335 F1200\n"); break;
       case KEY_ICON_7: CLOSE_MENU();      break;
       default: break;
     }

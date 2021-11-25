@@ -18,6 +18,20 @@ BUTTON bottomDoubleBtn[] = {
 const GUI_RECT doubleBtnRect[] = {POPUP_RECT_DOUBLE_CONFIRM, POPUP_RECT_DOUBLE_CANCEL};
 static const GUI_RECT singleBtnRect = POPUP_RECT_SINGLE_CONFIRM;
 
+//Z-Bolt
+static WINDOW window = {
+  DIALOG_TYPE_INFO,             // default window type
+  POPUP_RECT_WINDOW,            // rectangle position and size of popup window
+  POPUP_TITLE_HEIGHT,           // height of title bar
+  POPUP_BOTTOM_HEIGHT,          // height of action bar
+  3,                            // window border width
+  GRAY,                         // window border color
+  {ORANGE, GRAY},     // Title bar font color / background color
+  {WHITE, BLACK},     // Message area font color / background color
+  {BLACK, GRAY},     // actionbar font color / background color
+};
+
+/*
 static WINDOW window = {
   DIALOG_TYPE_INFO,             // default window type
   POPUP_RECT_WINDOW,            // rectangle position and size of popup window
@@ -29,6 +43,7 @@ static WINDOW window = {
   {DARKGRAY, MAT_LOWWHITE},     // Message area font color / background color
   {DARKGRAY, MAT_LOWWHITE},     // actionbar font color / background color
 };
+*/
 
 static BUTTON *windowButton =  NULL;
 static uint16_t buttonNum = 0;

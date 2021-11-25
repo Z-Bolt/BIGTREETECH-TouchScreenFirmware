@@ -361,5 +361,13 @@
     #define STRING_CONNECT_PROBE          "A folyamat megkezdése előtt\ncsatlakoztassa a szondát.\nGyőződjön meg róla,\nhogy utána lekapcsolja."
     #define STRING_DISCONNECT_PROBE       "A funkció használata előtt\ngyőződjön meg arról, hogy\nleválasztotta a szondát."
     #define STRING_CALIBRATION            "Kalibráció"
+    
+    //Z-Bolt
+    #define STRING_CHANGE                 "Change"
+    #define STRING_CONFIRM_LOAD           "Confirm load"
+    #define STRING_CONFIRM_UNLOAD         "Confirm unload"
+    #define STRING_WAIT_HEAT              "Heating, wait..."
+    #define STRING_BED_UP                 "Bed up"
+    #define STRING_BED_DOWN               "Bed Down"
 
 #endif

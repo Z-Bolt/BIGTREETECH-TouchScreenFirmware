@@ -9,9 +9,9 @@ const MENUITEMS UnifiedHeatItems = {
     {ICON_HEAT,                    LABEL_PREHEAT},
     {ICON_HEAT,                    LABEL_HEAT},
     {ICON_FAN,                     LABEL_FAN},
-    {ICON_BACKGROUND,              LABEL_BACKGROUND},
-    {ICON_BACKGROUND,              LABEL_BACKGROUND},
     {ICON_COOLDOWN,                LABEL_COOLDOWN},
+    {ICON_BACKGROUND,              LABEL_BACKGROUND},
+    {ICON_BACKGROUND,              LABEL_BACKGROUND},
     {ICON_BACKGROUND,              LABEL_BACKGROUND},
     {ICON_BACK,                    LABEL_BACK},
   }
@@ -40,7 +40,7 @@ void menuUnifiedHeat(void)
         OPEN_MENU(menuFan);
         break;
 
-      case KEY_ICON_5:
+      case KEY_ICON_3:
         heatCoolDown();
         break;
 

@@ -188,7 +188,7 @@
     #define STRING_NOZZLE                 "Сопло"
     #define STRING_BED                    "Стол"
     #define STRING_CHAMBER                "Камера"
-    #define STRING_FAN                    "Вентилятор"
+    #define STRING_FAN                    "Обдув"
 
     #define STRING_BLTOUCH                "BLTouch"
     #define STRING_TOUCHMI                "TouchMi"
@@ -291,7 +291,7 @@
     #define STRING_H_OFFSET               "Отступ H"
     #define STRING_DISTANCE               "Отступы"
     #define STRING_LOAD_UNLOAD            "Загрузить/Выгрузить"
-    #define STRING_LOAD_UNLOAD_SHORT      "За/Выгрузка"
+    #define STRING_LOAD_UNLOAD_SHORT      "Замена"
     #define STRING_TOUCHSCREEN_ADJUST     "Калибровка"
     #define STRING_MORE                   "Больше"
     #define STRING_SCREEN_INFO            "Инфо"
@@ -344,7 +344,7 @@
     #define STRING_HEATERS_ON             "Некоторые нагреватели все еще работают.\nХотите прервать нагрев?"
     #define STRING_PRINT_FINISHED         "   Печать\n   закончена"
     #define STRING_MAIN_SCREEN            "Главный"
-    #define STRING_PREVIOUS_PRINT_DATA    "Краткий"
+    #define STRING_PREVIOUS_PRINT_DATA    "Инфо"
     #define STRING_PRINT_TIME             "Время печати: %02u:%02u:%02u"
     #define STRING_FILAMENT_LENGTH        "\nДлина прутка: %1.2fm"
     #define STRING_FILAMENT_WEIGHT        "\nВес прутка: %1.2fg"
@@ -361,5 +361,13 @@
     #define STRING_CONNECT_PROBE          "Connect probe before starting the process. Make sure to disconnect it afterwards."
     #define STRING_DISCONNECT_PROBE       "Make sure you have disconnected probe before using this feature."
     #define STRING_CALIBRATION            "Calibrate"
+
+    //Z-Bolt
+    #define STRING_CHANGE                 "Замена"
+    #define STRING_CONFIRM_LOAD           "Убедитесь, что филамент\nвставлен в экструдер и\nнажмите ОК"
+    #define STRING_CONFIRM_UNLOAD         "Выгрузить филамент?"
+    #define STRING_WAIT_HEAT              "Ждите, идет нагрев..."
+    #define STRING_BED_UP                 "Стол вверх"
+    #define STRING_BED_DOWN               "Стол вниз"
 
 #endif

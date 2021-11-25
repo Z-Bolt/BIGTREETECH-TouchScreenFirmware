@@ -9,15 +9,15 @@ extern "C" {
 #include "GUI.h"
 
 // Colors for drawing the icons
-#define GANTRYLBL_BKCOLOR   MAT_DARKSLATE
-#define GANTRYLBL_COLOR     WHITE
-#define HEADING_COLOR       WHITE
-#define VAL_COLOR           BLACK
-#define INFOBOX_BKCOLOR     MAT_SLATE
-#define INFOBOX_BORDER      MAT_SLATE
-#define INFOBOX_ICON_COLOR  MAT_BLUE
-#define INFOMSG_BKCOLOR     WHITE
-#define INFOMSG_COLOR       BLACK
+#define GANTRYLBL_BKCOLOR   0x2187 // Z-BOLT
+#define GANTRYLBL_COLOR     WHITE // Z-BOLT
+#define HEADING_COLOR       WHITE // Z-BOLT
+#define VAL_COLOR           WHITE // Z-BOLT
+#define INFOBOX_BKCOLOR     0x4b0d // Z-BOLT
+#define INFOBOX_BORDER      0x4b0d // Z-BOLT
+#define INFOBOX_ICON_COLOR  0x03BF // Z-BOLT 
+#define INFOMSG_BKCOLOR     BLACK // Z-BOLT
+#define INFOMSG_COLOR       WHITE // Z-BOLT
 
 extern const GUI_POINT ss_title_point;
 extern const GUI_POINT ss_val_point;

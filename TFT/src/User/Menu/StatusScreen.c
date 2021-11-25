@@ -6,10 +6,11 @@
   #define KEY_FLOWMENU          (KEY_SPEEDMENU + 1)
   #define KEY_MAINMENU          (KEY_FLOWMENU + 1)
   #define SET_SPEEDMENUINDEX(x) setSpeedItemIndex(x)
-#else
+/**#else // Z-Bolt
   #define KEY_SPEEDMENU         KEY_ICON_3
   #define KEY_MAINMENU          (KEY_SPEEDMENU + 1)
   #define SET_SPEEDMENUINDEX(x)
+  */ // Z-Bolt
 #endif
 
 #define UPDATE_TOOL_TIME 2000  // 1 seconds is 1000
@@ -18,6 +19,8 @@ const MENUITEMS StatusItems = {
   // title
   LABEL_READY,
   // icon                          label
+
+  /**
   {
     {ICON_STATUS_NOZZLE,           LABEL_BACKGROUND},
     {ICON_STATUS_BED,              LABEL_BACKGROUND},
@@ -33,9 +36,18 @@ const MENUITEMS StatusItems = {
     {ICON_BACKGROUND,              LABEL_BACKGROUND},
     {ICON_PRINT,                   LABEL_PRINT},
   }
+  */
+    { {ICON_MAINMENU,    LABEL_MAINMENU},
+      {ICON_EXTRUDE,     LABEL_LOAD_UNLOAD_SHORT},
+      {ICON_PREHEAT,     LABEL_PREHEAT},
+      {ICON_PRINT,       LABEL_PRINT},
+      {ICON_BACKGROUND,  LABEL_BACKGROUND},
+      {ICON_BACKGROUND,  LABEL_BACKGROUND},
+      {ICON_BACKGROUND,  LABEL_BACKGROUND},
+      {ICON_SHUT_DOWN,   LABEL_SHUT_DOWN}}
 };
 
-const ITEM BedItems[2] = {
+/**const ITEM BedItems[2] = { //Z-Bolt
   // icon                        label
   {ICON_STATUS_BED,              LABEL_BACKGROUND},
   {ICON_STATUS_CHAMBER,          LABEL_BACKGROUND},
@@ -46,6 +58,8 @@ const ITEM SpeedItems[2] = {
   {ICON_STATUS_SPEED,            LABEL_BACKGROUND},
   {ICON_STATUS_FLOW,             LABEL_BACKGROUND},
 };
+*/ // Z-Bolt
+
 
 static int8_t lastConnection_status = -1;
 static bool msgNeedRefresh = false;
@@ -53,7 +67,7 @@ static bool msgNeedRefresh = false;
 static char msgtitle[20];
 static char msgbody[MAX_MSG_LENGTH];
 
-const char *const SpeedID[2] = SPEED_ID;
+/** const char *const SpeedID[2] = SPEED_ID; // Z-Bolt
 
 // text position rectangles for Live icons
 const GUI_POINT ss_title_point = {SSICON_WIDTH - BYTE_WIDTH / 2, SSICON_NAME_Y0};
@@ -61,6 +75,7 @@ const GUI_POINT ss_val_point   = {SSICON_WIDTH / 2, SSICON_VAL_Y0};
 #ifdef TFT70_V3_0
   const GUI_POINT ss_val2_point = {SSICON_WIDTH/2, SSICON_VAL2_Y0};
 #endif
+*/ // Z-Bolt
 
 // info box msg area
 const  GUI_RECT msgRect = {START_X + 1 * ICON_WIDTH + 1 * SPACE_X + 2, ICON_START_Y + 1 * ICON_HEIGHT + 1 * SPACE_Y + STATUS_MSG_BODY_YOFFSET,
@@ -68,6 +83,7 @@ const  GUI_RECT msgRect = {START_X + 1 * ICON_WIDTH + 1 * SPACE_X + 2, ICON_STAR
 
 const GUI_RECT RecGantry = {START_X,                                SSICON_HEIGHT + ICON_START_Y + STATUS_GANTRY_YOFFSET,
                             START_X + 4 * ICON_WIDTH + 3 * SPACE_X, ICON_HEIGHT + SPACE_Y + ICON_START_Y - STATUS_GANTRY_YOFFSET};
+
 
 void drawLiveText(uint8_t index, LIVE_INFO *lvIcon, const ITEM *lvItem)
 {
@@ -224,6 +240,8 @@ void drawLiveText(uint8_t index, LIVE_INFO *lvIcon, const ITEM *lvItem)
   #endif
 }
 
+
+/** //Z-Bolt
 void drawStatus(void)
 {
   // icons and their values are updated one by one to reduce flicker/clipping
@@ -332,6 +350,7 @@ void drawStatus(void)
 
   GUI_RestoreColorDefault();
 }
+*/ //Z-Bolt
 
 void statusScreen_setMsg(const uint8_t *title, const uint8_t *msg)
 {
@@ -388,6 +407,7 @@ static inline void scrollMsg(void)
   GUI_RestoreColorDefault();
 }
 
+/** //Z-Bolt
 static inline void toggleTool(void)
 {
   if (nextScreenUpdate(UPDATE_TOOL_TIME))
@@ -419,16 +439,16 @@ static inline void toggleTool(void)
     ctrlFanQuery();
   }
 }
+*/ //Z-Bolt
 
 void menuStatus(void)
 {
   KEY_VALUES key_num = KEY_IDLE;
-
   GUI_SetBkColor(infoSettings.bg_color);
-  menuDrawPage(&StatusItems);
-  GUI_SetColor(infoSettings.status_xyz_bg_color);
-  GUI_FillPrect(&RecGantry);
-  drawStatus();
+    menuDrawPage(&StatusItems);
+  //GUI_SetColor(infoSettings.status_xyz_bg_color);  //Z-Bolt
+  //GUI_FillPrect(&RecGantry);  //Z-Bolt
+  // drawStatus(); //Z-Bolt
   drawStatusScreenMsg();
 
   while (MENU_IS(menuStatus))
@@ -446,27 +466,14 @@ void menuStatus(void)
     key_num = menuKeyGetValue();
 
     switch (key_num)
-    {
-      case KEY_ICON_0:
-        heatSetCurrentIndex(currentTool);
-        OPEN_MENU(menuHeat);
-        break;
+    {     
+      case KEY_ICON_0: OPEN_MENU(menuMain);       break;
+      case KEY_ICON_1: OPEN_MENU(menuLoadUnload); break;
+      case KEY_ICON_2: OPEN_MENU(menuPreheat);    break;
+      case KEY_ICON_3: OPEN_MENU(menuPrint);      break;
+      case KEY_ICON_7: storeCmd("M81\n");         break;
 
-      case KEY_ICON_1:
-        heatSetCurrentIndex(BED + currentBCIndex);
-        OPEN_MENU(menuHeat);
-        break;
-
-      case KEY_ICON_2:
-        OPEN_MENU(menuFan);
-        break;
-
-      case KEY_SPEEDMENU:
-        SET_SPEEDMENUINDEX(0);
-        OPEN_MENU(menuSpeed);
-        break;
-
-      #ifdef TFT70_V3_0
+     /* #ifdef TFT70_V3_0 //Z-Bolt
         case KEY_FLOWMENU:
           SET_SPEEDMENUINDEX(1);
           OPEN_MENU(menuSpeed);
@@ -477,19 +484,15 @@ void menuStatus(void)
         OPEN_MENU(menuMain);
         break;
 
-      case KEY_ICON_7:
-        OPEN_MENU(menuPrint);
-        break;
-
       case KEY_INFOBOX:
-        OPEN_MENU(menuNotification);
-      default:
-        break;
-    }
+      OPEN_MENU(menuNotification);
+    */ //Z-Bolt
 
-    toggleTool();
+      default:break;
+    }
+    // toggleTool(); //Z-Bolt
     loopProcess();
   }
   // disable position auto report
-  coordinateQuery(0);
+  //coordinateQuery(0); // Z-Bolt
 }

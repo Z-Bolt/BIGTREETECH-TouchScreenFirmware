@@ -361,5 +361,13 @@
     #define STRING_CONNECT_PROBE          "开启此操作前请先连接探头, 操作完成后请断开连接"
     #define STRING_DISCONNECT_PROBE       "Make sure you have disconnected probe before using this feature."
     #define STRING_CALIBRATION            "校准"
+    
+    //Z-Bolt
+    #define STRING_CHANGE                 "Change"
+    #define STRING_CONFIRM_LOAD           "Confirm load"
+    #define STRING_CONFIRM_UNLOAD         "Confirm unload"
+    #define STRING_WAIT_HEAT              "Heating, wait..."
+    #define STRING_BED_UP                 "Bed up"
+    #define STRING_BED_DOWN               "Bed Down"
 
 #endif

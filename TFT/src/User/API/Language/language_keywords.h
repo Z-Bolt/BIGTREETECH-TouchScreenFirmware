@@ -369,6 +369,14 @@ extern "C" {
 #define LANG_KEY_DISCONNECT_PROBE             "label_disconnect_probe:"
 #define LANG_KEY_CALIBRATION                  "label_calibration:"
 
+// Z-Bolt
+#define LANG_KEY_CHANGE                       "label_change:"
+#define LANG_KEY_CONFIRM_LOAD                 "label_confirm_load:"
+#define LANG_KEY_CONFIRM_UNLOAD               "label_confirm_unload:"
+#define LANG_KEY_WAIT_HEAT                    "label_wait_heat:"
+#define LANG_KEY_BED_UP                       "label_bed_up:"
+#define LANG_KEY_BED_DOWN                     "label_bed_down:"
+
 #ifdef __cplusplus
 }
 #endif

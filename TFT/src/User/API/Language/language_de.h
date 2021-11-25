@@ -361,5 +361,13 @@
     #define STRING_CONNECT_PROBE          "Bitte Sensor anschließen, bevor der Vorgang gestartet wird. Danach bitte Sensor wieder trennen."
     #define STRING_DISCONNECT_PROBE       "Bitte sicherstellen, dass vor Nutzung dieser Funktion der Sensor getrennt wurde."
     #define STRING_CALIBRATION            "Kalibrierung"
+    
+    //Z-Bolt
+    #define STRING_CHANGE                 "Change"
+    #define STRING_CONFIRM_LOAD           "Confirm load"
+    #define STRING_CONFIRM_UNLOAD         "Confirm unload"
+    #define STRING_WAIT_HEAT              "Heating, wait..."
+    #define STRING_BED_UP                 "Bed up"
+    #define STRING_BED_DOWN               "Bed Down"
 
 #endif

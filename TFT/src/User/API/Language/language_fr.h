@@ -361,5 +361,13 @@
     #define STRING_CONNECT_PROBE          "Connectez le palpeur avant de démarrer le processus. Veillez à le déconnecter ensuite."
     #define STRING_DISCONNECT_PROBE       "Assurez-vous d'avoir déconnecté le palpeur avant d'utiliser cette fonctionnalité."
     #define STRING_CALIBRATION            "Calibrate"
+    
+    //Z-Bolt
+    #define STRING_CHANGE                 "Change"
+    #define STRING_CONFIRM_LOAD           "Confirm load"
+    #define STRING_CONFIRM_UNLOAD         "Confirm unload"
+    #define STRING_WAIT_HEAT              "Heating, wait..."
+    #define STRING_BED_UP                 "Bed up"
+    #define STRING_BED_DOWN               "Bed Down"
 
 #endif

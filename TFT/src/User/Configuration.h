@@ -114,11 +114,11 @@
 #define TITLE_BACKGROUND_COLOR  1  // Title background color (Default: 1)
 #define MENU_BACKGROUND_COLOR   1  // Menu background color (Default: 1)
 #define MENU_FONT_COLOR         0  // Menu font color (Default: 0)
-#define REMINDER_FONT_COLOR     2  // Reminder font color, such as: "No print attached", "Busy processing", etc (Default: 2)
-#define STATUS_FONT_COLOR       5  // Status (e.g. volume reminder, ABL probing point etc...) font color, such as: "Card inserted", "Card removed" (Default: 5)
-#define STATUS_XYZ_BG_COLOR    15  // Backgroud color for X Y Z position display in Status Screen menu (Default: 15)
-#define LIST_BORDER_COLOR      15  // List View border color (Default: 15)
-#define LIST_BUTTON_BG_COLOR   15  // List View button background color (Default: 15)
+#define REMINDER_FONT_COLOR     14  // Reminder font color, such as: "No print attached", "Busy processing", etc (Default: 2)
+#define STATUS_FONT_COLOR       14  // Status (e.g. volume reminder, ABL probing point etc...) font color, such as: "Card inserted", "Card removed" (Default: 5)
+#define STATUS_XYZ_BG_COLOR     1  // Backgroud color for X Y Z position display in Status Screen menu (Default: 15)
+#define LIST_BORDER_COLOR       1  // List View border color (Default: 15)
+#define LIST_BUTTON_BG_COLOR    1  // List View button background color (Default: 15)
 
 // Mesh Leveling Display Colors (Mesh Editor)
 // Set the colors used for drawing the mesh with the minimun and maximum value in the grid.
@@ -178,7 +178,7 @@
  * Show persistent temperature info in all menus.
  *   Options: [disable: 0, enable: 1]
  */
-#define PERSISTENT_INFO 0  // Default: 0
+#define PERSISTENT_INFO 1  // Default: 0
 
 /**
  * Temperature ACK In Terminal
@@ -332,7 +332,7 @@
  * The TFT will auto-detect if chamber heating is enabled in Marlin firmware.
  *   Options: [disable: 0, enable: 1]
  */
-#define HEATED_CHAMBER 0  // Default: 0
+#define HEATED_CHAMBER 1  // Default: 0
 
 /**
  * Extruder Count
@@ -364,7 +364,7 @@
  *                bed:     [min: 20, max: 400]
  *                chamber: [min: 20, max: 200]
  */
-#define MAX_TEMP {275, 275, 275, 275, 275, 275, 150, 60}  // Default: {275, 275, 275, 275, 275, 275, 150, 60}
+#define MAX_TEMP {300, 275, 275, 275, 275, 275, 140, 80}  // Default: {275, 275, 275, 275, 275, 275, 150, 60}
 
 /**
  * Cold Extrusion Minimum Temperature
@@ -373,7 +373,7 @@
  *   Unit: [temperature in °C]
  *   Value range: [min: 20, max: 1000]
  */
-#define MIN_TEMP 180  // Default: 180
+#define MIN_TEMP 170  // Default: 180
 
 /**
  * Fan Maximum PWM Speed
@@ -396,9 +396,9 @@
 #define X_MIN_POS   0  // Default: 0
 #define Y_MIN_POS   0  // Default: 0
 #define Z_MIN_POS   0  // Default: 0
-#define X_MAX_POS 235  // Default: 235
-#define Y_MAX_POS 235  // Default: 235
-#define Z_MAX_POS 250  // Default: 250
+#define X_MAX_POS 300  // Default: 235
+#define Y_MAX_POS 300  // Default: 235
+#define Z_MAX_POS 350  // Default: 250
 
 /**
  * X & Y Move Speeds/Feedrates
@@ -407,9 +407,9 @@
  *   Unit: [feedrate in mm/min]
  *   Value range: [min: 10, max: 12000]
  */
-#define SPEED_XY_SLOW   1000  // Default: 1000
-#define SPEED_XY_NORMAL 3000  // Default: 3000
-#define SPEED_XY_FAST   5000  // Default: 5000
+#define SPEED_XY_SLOW   3000  // Default: 1000
+#define SPEED_XY_NORMAL 6000  // Default: 3000
+#define SPEED_XY_FAST   9000  // Default: 5000
 
 /**
  * Z Speeds/Feedrates
@@ -418,9 +418,9 @@
  *   Unit: [feedrate in mm/min]
  *   Value range: [min: 10, max: 12000]
  */
-#define SPEED_Z_SLOW   500   // Default: 500
-#define SPEED_Z_NORMAL 1000  // Default: 1000
-#define SPEED_Z_FAST   2000  // Default: 2000
+#define SPEED_Z_SLOW   600   // Default: 500
+#define SPEED_Z_NORMAL 1200  // Default: 1000
+#define SPEED_Z_FAST   1800  // Default: 2000
 
 /**
  * Extruder Speeds/Feedrates
@@ -430,8 +430,8 @@
  *   Value range: [min: 10, max: 12000]
  */
 #define EXTRUDE_SLOW_SPEED     60  // Default: 60
-#define EXTRUDE_NORMAL_SPEED  600  // Default: 600
-#define EXTRUDE_FAST_SPEED   1200  // Default: 1200
+#define EXTRUDE_NORMAL_SPEED  300  // Default: 600
+#define EXTRUDE_FAST_SPEED    900  // Default: 1200
 
 /**
  * Auto Save/Load Bed Leveling Data
@@ -498,11 +498,11 @@
  * Leveling Settings
  * These settings are used for leveling.
  */
-#define LEVELING_EDGE_DISTANCE    20  // Inset distance from bed's edge for calculating leveling point location (Default: 20)
+#define LEVELING_EDGE_DISTANCE    15  // Inset distance from bed's edge for calculating leveling point location (Default: 20)
 #define LEVELING_Z_POS          0.2f  // Z-axis position when nozzle stays for leveling (Default: 0.2f)
 #define LEVELING_Z_RAISE       10.0f  // Z-axis position when nozzle move to next point (Default: 10.0f)
 #define LEVELING_XY_FEEDRATE    6000  // (mm/min) X and Y axes move feedrate (Default: 6000)
-#define LEVELING_Z_FEEDRATE     6000  // (mm/min) Z axis move feedrate (Default: 6000)
+#define LEVELING_Z_FEEDRATE     900  // (mm/min) Z axis move feedrate (Default: 6000)
 
 /**
  * Inverted Axes (Manual Leveling, Move, Probe Offset)
@@ -584,8 +584,8 @@
  *                bed temp:    [min: 20, max: 400]
  */
 #define PREHEAT_LABELS {"PLA", "PETG", "ABS", "WOOD", "TPU", "NYLON"}  // Default: {"PLA", "PETG", "ABS", "WOOD", "TPU", "NYLON"}
-#define PREHEAT_HOTEND {200,   240,    230,   170,    220,   250}      // Default: {200,   240,    230,   170,    220,   250}
-#define PREHEAT_BED    { 60,    70,     90,    50,     50,    90}      // Default: { 60,    70,     90,    50,     50,    90}
+#define PREHEAT_HOTEND {210,   230,    245,   170,    220,    250}      // Default: {200,   240,    230,   170,    220,   250}
+#define PREHEAT_BED    { 60,    75,     110,    50,     60,    110}      // Default: { 60,    70,     90,    50,     50,    90}
 
 //================================================================================
 //============================ Power Supply Settings =============================
@@ -1039,7 +1039,7 @@
  * FILAMENT_LOAD_UNLOAD_GCODES option on Marlin configuration_adv.h need to be uncommented.
  * Adds a submenu to the movement menu for selecting load and unload actions.
  */
-#define LOAD_UNLOAD_M701_M702  // Default: uncommented (enabled)
+//#define LOAD_UNLOAD_M701_M702  // Default: uncommented (enabled)
 
 /**
  * Delta Probe Type
@@ -1065,7 +1065,7 @@
  *             SPANISH,    FRENCH,   PORTUGUESE,  ITALIAN,    POLISH,    SLOVAK,        DUTCH,
  *             HUNGARIAN,  TURKISH,  GREEK,       SLOVENIAN,  CATALAN,   TRAD_CHINESE,  UKRAINIAN]
  */
-#define SYSTEM_LANGUAGE ENGLISH  // Default: ENGLISH
+#define SYSTEM_LANGUAGE RUSSIAN  // Default: ENGLISH
 
 /**
  * Rapid Serial Communication
