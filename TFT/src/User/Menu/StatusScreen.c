@@ -75,6 +75,7 @@ const GUI_POINT ss_val_point   = {SSICON_WIDTH / 2, SSICON_VAL_Y0};
 #ifdef TFT70_V3_0
   const GUI_POINT ss_val2_point = {SSICON_WIDTH/2, SSICON_VAL2_Y0};
 #endif
+
 */ // Z-Bolt
 
 // info box msg area
